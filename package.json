@@ -1,0 +1,26 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "Adding Mocha and Chai",
+  "main": "headTest.js",
+  "directories": {
+    "test": "mocha"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnhLe3698/lotide.git"
+  },
+  "author": "Anh Le",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnhLe3698/lotide/issues"
+  },
+  "homepage": "https://github.com/AnhLe3698/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
