@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@anhcodes/lotide",
   "version": "1.0.0",
-  "description": "Adding Mocha and Chai",
+  "description": "Mini Version of Lodash",
   "main": "headTest.js",
   "directories": {
     "test": "test"
