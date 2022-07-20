@@ -29,3 +29,9 @@ The following functions are currently implemented:
 * `head`: returns the first element of array
 * `middle`: returns the middle element(s) of the array
 * `tail`: returns the array excluding the first element
+* `flatten`: Returns a single array from an array of arrays
+* `countOnly`: Counts the amount a string appears in an array
+* `letterPositions`: Returns the index(s) of the letter
+* `findKeyByValue`: It will return the key of the associated value from an object
+* `eqObjects`: Checks if two objects are equal and return true/false
+* `eqArrays`: Checks if two arrays are equal and returns true/false
