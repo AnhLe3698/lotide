@@ -1,8 +1,17 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const eqArrays = require('../eqArrays');
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => true
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false); // => false
-
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+describe("#eqArrays", () => {
+  it("The two arrays are equal and should return true", () => {
+    assert.strictEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+  });
+  it("The two arrays are equal and should return true", () => {
+    assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+  });
+  it("The two arrays are not equal and should return false", () => {
+    assert.strictEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
+  });
+  it("The two arrays are not equal and should return false", () => {
+    assert.strictEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+  });
+});

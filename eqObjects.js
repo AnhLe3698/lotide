@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`😁🤪✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🤢🤮❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const eqArrays = function(array1, array2) {
   // This conditional will check if the arrays are same size
   if (array1.length === array2.length) {
@@ -60,17 +52,5 @@ const eqObjects = function(object1, object2) {
 
 };
 
-
-
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true);
-
-const abc = { a: "1", b: "2", c: "3" };
-const abcd = { a: [1,2,3], b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false);
-const abcde = {b: "2", a: [1,2,3], c: "3" };
-const abcdef = {b: "2", a: [1,2,3,4], c: "3" };
-assertEqual(eqObjects(abcd, abcde), true);
-assertEqual(eqObjects(abcde, abcdef), false);
+module.exports = eqObjects;
  

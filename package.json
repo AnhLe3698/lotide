@@ -1,6 +1,6 @@
 {
   "name": "@anhcodes/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mini Version of Lodash",
   "main": "headTest.js",
   "directories": {

@@ -1,32 +1,3 @@
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1,array2)) {
-    console.log(`😁🤪✅ Arrays are equal [${array1}] === [${array2}]`);
-  } else {
-    console.log(`🤢🤮❌ Arrays are not equal [${array1}] !== [${array2}]`);
-  }
-};
-
-const eqArrays = function(array1, array2) {
-  // This conditional will check if the arrays are same size
-  if (array1.length === array2.length) {
-    let checkNum = 0; // Track if all entries are equal!
-    for (let i = 0; i < array1.length; i++) {
-      if (array1[i] === array2[i]) {
-        checkNum += 1;
-      }
-    }
-    // The following conditional will check if all the entries
-    // are equal.
-    if (checkNum === array1.length) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
-};
-
 const flatten = function(array) {
   let resultingArray = [];
   for (let i = 0; i < array.length; i++) {
@@ -47,8 +18,4 @@ const flatten = function(array) {
   return resultingArray;
 };
 
-console.log(flatten([1, 2, [3, 4], 5, [6]]));
-
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertArraysEqual(flatten([1, 2, [2, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertArraysEqual(flatten(['tree', ['branch', 'house'], 'woodpecker']), ['tree', 'branch', 'house', 'woodpecker']);
+module.exports = flatten;
