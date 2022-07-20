@@ -4,10 +4,10 @@
   "description": "Adding Mocha and Chai",
   "main": "headTest.js",
   "directories": {
-    "test": "mocha"
+    "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
