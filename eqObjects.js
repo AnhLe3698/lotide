@@ -1,3 +1,4 @@
+/*
 const eqArrays = function(array1, array2) {
   // This conditional will check if the arrays are same size
   if (array1.length === array2.length) {
@@ -50,6 +51,64 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 
+};
+*/
+
+// New recursive function underneath
+
+const eqObjects = function(object1, object2) {
+  // Need to run the main function both ways to assure that both objects
+  // are the same not just that one is a subset of the other.
+  if (main(object1,object2) && (main(object2, object1))) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const main = function(object1, object2) {
+  for (const items in object1) {
+    // Checks if the element is an object.
+    if (typeof(object1[items]) === 'object' && !Array.isArray(object1[items]) && typeof(object2[items]) === 'object' && !Array.isArray(object2[items])) {
+      // Recursively call main if it is an object.
+      if (!main(object1[items], object2[items])) {
+        return false;
+      }
+      // Checks if elements are both arrays
+    } else if (Array.isArray(object1[items]) && Array.isArray(object2[items])) {
+      if (!eqArrays(object1[items], object2[items])) {
+        return false;
+      }
+      // Checks if both elements are not the same or undefined.
+    } else if (object1[items] !== object2[items] || object2[items] === undefined) {
+      return false;
+    }
+  }
+  return true;
+};
+
+// This is a recursive eqArray Function!
+// It can handle many(inifinite?) nested arrays!
+const eqArrays = function(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  } else if (array1.length === 0 && array2.length === 0) {
+    return true;
+  }
+  let x = array1.pop();
+  let x2 = array2.pop();
+  // checks if the elements are arrays, and will recursively
+  // iterate through array elements
+  if (Array.isArray(x) && Array.isArray(x2)) {
+    if (!eqArrays(x,x2)) {
+      return false;
+    }
+    // Checking if elements equal one another
+  } else if (x !== x2) {
+    return false;
+  }
+  // Recursively iterate for each non array element
+  return eqArrays(array1,array2);
 };
 
 module.exports = eqObjects;
